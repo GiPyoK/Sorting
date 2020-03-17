@@ -19,7 +19,12 @@ def selection_sort( arr ):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
-
+    for i in range(len(arr)):
+        for j in range(len(arr) - i - 1):
+            if arr[j + 1] < arr[j]:
+                temp = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp
     return arr
 
 
@@ -27,8 +32,3 @@ def bubble_sort( arr ):
 def count_sort( arr, maximum=-1 ):
 
     return arr
-
-
-
-a = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
-print(selection_sort(a))

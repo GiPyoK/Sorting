@@ -48,13 +48,36 @@ def merge_sort( arr ):
 # STRETCH: implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
     # TO-DO
+    temp = []
+    if mid - start > end - mid: # make copy of smaller portion of arr
+        temp = arr[mid : end + 1]
+        end_index_l = mid - 1
+        end_index_r = end
+        for _ in range(mid - start): # shift right the left array
+            arr[end_index_r] = arr[end_index_l]
+            end_index_l -= 1
+            end_index_r -= 1
+    else:
+        temp = arr[start : mid + 1]
+
+    while :
+
+        
+
+        count -= 1
 
     return arr
 
 def merge_sort_in_place(arr, l, r): 
     # TO-DO
+    # arr = [4,2,5,1]
+    # l = 0, r = 3
+    m = (l - r) // 2 # m = 1
 
-    return arr
+    merge_sort_in_place(arr, l, m) # merge_sourt_in_place(arr, 0, 1)
+    merge_sort_in_place(arr, m + 1, r) # merge_sourt_in_place(arr, 2, 3)
+
+    return merge_in_place(arr, l, m, r)
 
 
 # STRETCH: implement the Timsort function below
